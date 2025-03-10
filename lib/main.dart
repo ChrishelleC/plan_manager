@@ -55,7 +55,7 @@ class _PlanManagerScreenState extends State<PlanManagerScreen> {
     });
   }
 
-  // Toggle completion status of a plan
+  // To toggle completion status of a plan
   void _toggleComplete(int index) {
     setState(() {
       plans[index].isCompleted = !plans[index].isCompleted;
