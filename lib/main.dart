@@ -14,7 +14,7 @@ class PlanManagerApp extends StatelessWidget {
   }
 }
 
-// Model class to represent a plan
+
 class Plan {
   String name;
   String description;
@@ -37,9 +37,9 @@ class PlanManagerScreen extends StatefulWidget {
 }
 
 class _PlanManagerScreenState extends State<PlanManagerScreen> {
-  List<Plan> plans = []; // List to store plans
+  List<Plan> plans = []; 
 
-  // Method to add a new plan
+  
   void _addPlan(String name, String description, DateTime date, String priority) {
     setState(() {
       plans.add(Plan(name: name, description: description, date: date, priority: priority));
@@ -47,7 +47,7 @@ class _PlanManagerScreenState extends State<PlanManagerScreen> {
     });
   }
 
-  // Method to edit an existing plan
+  
   void _editPlan(int index, String name, String description, DateTime date, String priority) {
     setState(() {
       plans[index] = Plan(name: name, description: description, date: date, priority: priority);
@@ -55,21 +55,21 @@ class _PlanManagerScreenState extends State<PlanManagerScreen> {
     });
   }
 
-  // Method to toggle completion status of a plan
+  // Toggle completion status of a plan
   void _toggleComplete(int index) {
     setState(() {
       plans[index].isCompleted = !plans[index].isCompleted;
     });
   }
 
-  // Method to delete a plan
+  // Delete a plan
   void _deletePlan(int index) {
     setState(() {
       plans.removeAt(index);
     });
   }
 
-  // Method to sort plans based on priority
+  // Sort plans based on priority
   void _sortPlans() {
     plans.sort((a, b) {
       const priorityOrder = {'High': 0, 'Medium': 1, 'Low': 2};
@@ -77,7 +77,7 @@ class _PlanManagerScreenState extends State<PlanManagerScreen> {
     });
   }
 
-  // Method to show a dialog for adding/editing a plan
+  // Show a dialog for adding/editing a plan
   void _showPlanDialog({int? index}) {
     final TextEditingController nameController = TextEditingController(text: index != null ? plans[index].name : '');
     final TextEditingController descriptionController = TextEditingController(text: index != null ? plans[index].description : '');
